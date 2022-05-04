@@ -1,3 +1,4 @@
+*.txt
+Day0.py
 data_folder
 __pycache__
-Day0.py
