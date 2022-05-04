@@ -82,25 +82,3 @@ print(
 0,6,9 - 6 segments - distinguish by whether they contain 4 and/or contain 1
 2,3,5 - 5 segments - 6 contains 5, 3 contains 1, and 2 is not contained in 9
 '''
-# nums = [
-#     'abcdeg', 'ab', 'acdfg', 'abcdf', 'abef',
-#     'bcdef', 'bcdefg', 'abd', 'abcdefg', 'abcdef' #, 'abcefg'
-# ]
-# nums_sets = [set(num) for num in nums]
-# nums_lens = {2:1, 3:7, 4:4, 7:8}
-#
-# print(
-#     'Part 2: ',
-#     sum([
-#         int(''.join(
-#             str(nums_lens[len(word)])
-#             if not set(word) in nums_sets
-#             else
-#             str(nums_sets.index(set(word)))
-#
-#             for word in line.split(' | ')[-1].strip().split(' ')
-#         ))
-#
-#         for line in data_in.splitlines()
-#     ])
-# )
