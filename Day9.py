@@ -1,4 +1,3 @@
-from pprint import pprint
 from Day0 import day_data
 data_in = day_data(9)
 
@@ -24,6 +23,8 @@ def low_points(hight_map: list[list], mark_map):
 
 risk, mark_map, points = low_points(hight_map, mark_map)
 print('Part 1:', risk)
+
+# from pprint import pprint
 # pprint(mark_map)
 
 
