@@ -1,8 +1,9 @@
+from statistics import median
 from Day0 import day_data
 data_in = day_data(10)
 
 
-def bracket_matcher(data):
+def bracket_matcher(data, fix=False):
     stack=[""]
     brackets={"(":")","[":"]","{":"}","<":">"}
     for c in data:
@@ -10,9 +11,9 @@ def bracket_matcher(data):
             stack.append(brackets[c])
 
         elif c in brackets.values() and c!=stack.pop(): # corrupted
-            return c
+            return [c, ''][fix]
         
-    return '' if stack==[""] else stack[0] # need fix
+    return ['', ''.join(stack[-1::-1])][fix] # need fix
 
 
 def calc_err(errs):
@@ -28,10 +29,36 @@ def calc_err(errs):
     
     return err_score
 
-# print(bracket_matcher("(((1+(1+1))]))"))
+def calc_fix(fixes):
+    score = {     
+        ')': 1,
+        ']': 2,
+        '}': 3,
+        '>': 4,
+    }
+    fix_scores = []
+    
+    for fix in fixes:
+        if not fix: continue
+        
+        fix_score = 0
+        for l in fix:
+            fix_score = (fix_score*5) + score[l]
+        
+        fix_scores.append(fix_score)
+    
+    return median(fix_scores)
+
 errs = ''
 
 for line in data_in.splitlines():
     errs += bracket_matcher(line)
     
-print(calc_err(errs))
+print('part 1:', calc_err(errs))
+
+fixes = []
+
+for line in data_in.splitlines():
+    fixes += [bracket_matcher(line, True)]
+    
+print('part 2:', calc_fix(fixes))
