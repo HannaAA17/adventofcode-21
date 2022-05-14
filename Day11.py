@@ -2,14 +2,18 @@ from Day0 import day_data
 
 data_in = day_data(11).splitlines()
 
-ii = len(data_in)
-jj = len(data_in[0])
 
-matrix = {
-    (i, j): int(data_in[i][j])
-    for i in range(ii)
-    for j in range(jj)
-}
+def create_matrix(data_in: list) -> dict:
+    ii = len(data_in)
+    jj = len(data_in[0])
+
+    matrix = {
+        (i, j): int(data_in[i][j])
+        for i in range(ii)
+        for j in range(jj)
+    }
+    
+    return matrix
 
 
 def step(matrix: dict) -> dict:
@@ -20,13 +24,16 @@ def step(matrix: dict) -> dict:
 
 def get_neighbors(point: tuple[int, int], matrix: dict) -> list[tuple[int, int]]:
     ii, jj = point
-    return [
+    
+    neighbors = [
         (i, j)
         for i in range(ii-1, ii+2)
         for j in range(jj-1, jj+2)
         if (i, j) in matrix.keys()
         and (i, j) != point
     ]
+    
+    return neighbors
 
 
 def print_matrix(matrix: dict, ii: int, jj: int) -> None:
