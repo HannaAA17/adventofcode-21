@@ -64,6 +64,15 @@ def triple_step(matrix, n=1):
         t_f += c_f
     return matrix, t_f
 
+def bright_light(matrix:dict) -> dict:
+    s=0
+    while set(matrix.values()) != {0}:
+        matrix, flashed = step(matrix)
+        matrix, _ = double_step(matrix, flashed)
+        s+=1
+    print('\nStep:', s)
+    return matrix
+
 def print_matrix(matrix: dict, ii, jj) -> None:
     for i in range(ii):
         for j in range(jj):
@@ -74,9 +83,12 @@ def print_matrix(matrix: dict, ii, jj) -> None:
 
 data_in = day_data(11).splitlines()
 matrix, ii, jj = create_matrix(data_in)
+
+'''Part 1'''
 # print(get_neighbors((0, 0), matrix))
+# matrix, t_f = triple_step(matrix, 100)
+# print('\nNumber of Flashed:', t_f, '\n')
 
-matrix, t_f = triple_step(matrix, 100)
-
-print('\nNumber of Flashed:', t_f, '\n')
+'''part 2'''
+matrix = bright_light(matrix)
 print_matrix(matrix, ii, jj)
