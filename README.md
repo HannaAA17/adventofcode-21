@@ -1,7 +1,8 @@
 # adventofcode-21
 
-**Advent of Code 2021**
+![](https://img.shields.io/badge/python-3.9+-blue.svg)
 
+**Advent of Code 2021**
 Create file with the name `Day0.py`
 
 ```python3
