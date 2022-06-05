@@ -1,4 +1,4 @@
-from Day0 import day_data
+from Day_0 import day_data
 
 # data_in = ['00100', '11110', '10110', '10111', '10101', '01111', '00111', '11100', '10000', '11001', '00010', '01010']
 data_in = day_data(3).splitlines()

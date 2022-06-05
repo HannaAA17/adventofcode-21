@@ -1,4 +1,4 @@
-from Day0 import day_data
+from Day_0 import day_data
 
 
 def get_dots_folds(day_data):

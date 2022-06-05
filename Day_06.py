@@ -1,4 +1,4 @@
-from Day0 import day_data
+from Day_0 import day_data
 
 data_in = day_data(6)
 counts = [data_in.strip().count(str(i)) for i in range(10)]

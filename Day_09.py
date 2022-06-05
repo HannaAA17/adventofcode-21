@@ -1,4 +1,4 @@
-from Day0 import day_data
+from Day_0 import day_data
 data_in = day_data(9)
 
 hight_map = [[int(num) for num in line] for line in data_in.splitlines()]

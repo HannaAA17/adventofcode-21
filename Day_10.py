@@ -1,5 +1,5 @@
 from statistics import median
-from Day0 import day_data
+from Day_0 import day_data
 data_in = day_data(10)
 
 

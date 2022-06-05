@@ -1,4 +1,4 @@
-from Day0 import day_data
+from Day_0 import day_data
 
 from collections import Counter
 from statistics import median, mean
